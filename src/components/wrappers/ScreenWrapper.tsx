@@ -13,6 +13,7 @@ const FocusAwareStatusBar: React.FC<StatusBar["props"]> = (props) => {
 
 export const ScreenWrapper: CompFC<{
   statusBarColor?: string;
+  statusBarContentStyle?: "dark-content" | "light-content" | "default";
   header?: {
     onBack: () => void;
     title: string;
@@ -30,6 +31,7 @@ export const ScreenWrapper: CompFC<{
     header.textColor = header.textColor || colors.darkGrey;
   }
   const statusBarColor = props.statusBarColor || header?.bgColor || colors.offWhite;
+  const statusBarContentStyle = props.statusBarContentStyle ?? "dark-content";
 
   return (
     <SafeAreaView
@@ -37,7 +39,11 @@ export const ScreenWrapper: CompFC<{
         backgroundColor: colors.offWhite,
         flex: 1,
       }}>
-      <FocusAwareStatusBar barStyle="dark-content" backgroundColor={statusBarColor} translucent />
+      <FocusAwareStatusBar
+        barStyle={statusBarContentStyle}
+        backgroundColor={statusBarColor}
+        translucent
+      />
       <View style={{flex: 1, position: "relative"}}>
         {header && (
           <>
