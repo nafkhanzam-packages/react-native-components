@@ -3,18 +3,18 @@ import {Image, ImageBackground, ImageProps, TouchableOpacity} from "react-native
 
 const resolveAssetSource = Image.resolveAssetSource;
 
-interface IOnSizeParams {
+type IOnSizeParams = {
   width: number;
   height: number;
-}
+};
 
-interface PropsType extends ImageProps {
+type PropsType = ImageProps & {
   height?: number;
   width?: number;
   background?: boolean;
   onPress?: () => void;
   onSize?: (onSizeParams: IOnSizeParams) => void;
-}
+};
 
 export const ScalableImage: React.FC<PropsType> = (props) => {
   const ImageComponent: ElementType = props.background ? ImageBackground : Image;
