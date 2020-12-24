@@ -39,6 +39,7 @@ export type StyleDefaultButtonProps = {
   loadingTextColor?: Color;
   shadowColor?: Color;
   textDecorationLine?: TextStyle["textDecorationLine"];
+  noShadow?: boolean;
 };
 
 export const DefaultButton: CompFC<{
@@ -55,7 +56,7 @@ export const DefaultButton: CompFC<{
         backgroundColor: disabled ? sProps.disabledBackgroundColor : sProps.backgroundColor,
         borderColor: sProps.borderColor,
         borderRadius: 5,
-        elevation: 2,
+        elevation: sProps.noShadow ? undefined : 2,
         height: 48,
         justifyContent: "center",
         marginTop: 10,
@@ -63,12 +64,14 @@ export const DefaultButton: CompFC<{
         paddingHorizontal: 15,
         shadowColor: sProps.shadowColor,
         alignItems: "center",
-        shadowOffset: {
-          height: 6,
-          width: 3,
-        },
-        shadowOpacity: 0.16,
-        shadowRadius: 10,
+        shadowOffset: sProps.noShadow
+          ? undefined
+          : {
+              height: 6,
+              width: 3,
+            },
+        shadowOpacity: sProps.noShadow ? undefined : 0.16,
+        shadowRadius: sProps.noShadow ? undefined : 10,
       }}
       onPress={fProps.onPress}>
       <CenterWrapper theme={theme}>
