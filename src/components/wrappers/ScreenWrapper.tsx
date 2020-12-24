@@ -3,6 +3,7 @@ import {Button, Header, Icon, Left, Right, Title, View} from "native-base";
 import React, {ReactNode} from "react";
 import {StatusBar} from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context";
+import {CompFC} from "../../types";
 
 const FocusAwareStatusBar: React.FC<StatusBar["props"]> = (props) => {
   const isFocused = useIsFocused();

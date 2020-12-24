@@ -1,5 +1,6 @@
 import {View} from "native-base";
 import React from "react";
+import {CompFC} from "../../types";
 
 export const CenterWrapper: CompFC<{horizontalOnly?: boolean}> = (props) => {
   return (

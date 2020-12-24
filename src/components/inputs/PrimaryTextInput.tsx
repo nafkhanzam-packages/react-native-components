@@ -2,6 +2,7 @@ import {Text, View} from "native-base";
 import React from "react";
 import {TextInput} from "react-native";
 import BlankSpacer from "react-native-blank-spacer";
+import {CompFC} from "../../types";
 
 export const PrimaryTextInput: CompFC<{
   title?: string;

@@ -1,6 +1,7 @@
 import {Icon} from "native-base";
 import React from "react";
 import {TextInput, View} from "react-native";
+import {CompFC} from "../../types";
 
 const SearchBar: CompFC<{
   placeholder?: string;

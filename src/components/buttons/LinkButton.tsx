@@ -1,5 +1,6 @@
 import React from "react";
 import {DefaultButton, FunctionalDefaultButtonProps} from "./DefaultButton";
+import {CompFC} from "../../types";
 
 export const LinkButton: CompFC<FunctionalDefaultButtonProps> = (props) => {
   const {theme} = props;

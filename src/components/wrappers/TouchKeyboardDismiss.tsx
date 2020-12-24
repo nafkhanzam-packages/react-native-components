@@ -1,5 +1,6 @@
 import React from "react";
 import {Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback} from "react-native";
+import {CompFC} from "../../types";
 
 //! Buggy on scrolling, use with care!
 export const TouchKeyboardDismiss: CompFC<{}> = (props) => (

@@ -1,5 +1,6 @@
 import React from "react";
 import {Theme} from "../theme";
+import {CompFC} from "../types";
 import {DangerButton} from "./buttons/DangerButton";
 import {DefaultButton} from "./buttons/DefaultButton";
 import {LinkButton} from "./buttons/LinkButton";

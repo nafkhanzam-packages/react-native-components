@@ -3,6 +3,7 @@ import React from "react";
 import {GestureResponderEvent, TextStyle, TouchableOpacity} from "react-native";
 import {PrimarySpinner} from "../spinners/PrimarySpinner";
 import {CenterWrapper} from "../wrappers/CenterWrapper";
+import {CompFC} from "../../types";
 
 export type FunctionalDefaultButtonProps = {
   onPress?: (event: GestureResponderEvent) => void;

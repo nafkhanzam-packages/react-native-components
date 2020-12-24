@@ -1,5 +1,6 @@
 import React from "react";
 import {DefaultButton, FunctionalDefaultButtonProps} from "./DefaultButton";
+import {CompFC} from "../../types";
 
 export const PrimaryButton: CompFC<FunctionalDefaultButtonProps> = (props) => {
   const {theme} = props;

@@ -4,6 +4,7 @@ import {Icon, View} from "native-base";
 import React, {useState} from "react";
 import {TouchableWithoutFeedback} from "react-native";
 import {PrimaryTextInput} from "./PrimaryTextInput";
+import {CompFC} from "../../types";
 
 export const PrimaryDateInput: CompFC<{
   title?: string;

@@ -1,6 +1,7 @@
 import {Picker, Text, View} from "native-base";
 import React from "react";
 import BlankSpacer from "react-native-blank-spacer";
+import {CompProps} from "../../types";
 
 export const PrimaryPickerInput = <T,>(
   props: CompProps<{
