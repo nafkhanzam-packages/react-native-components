@@ -6,6 +6,7 @@ import {DefaultButton} from "./buttons/DefaultButton";
 import {LinkButton} from "./buttons/LinkButton";
 import {PrimaryButton} from "./buttons/PrimaryButton";
 import {SecondaryButton} from "./buttons/SecondaryButton";
+import {PrimaryCard} from "./cards/PrimaryCard";
 import {DefaultCarousel} from "./carousels/DefaultCarousel";
 import CoverBackground from "./images/CoverBackground";
 import {FitImage} from "./images/FitImage";
@@ -18,6 +19,10 @@ import {ErrorFull} from "./screens/ErrorFull";
 import {LoadingFull} from "./screens/LoadingFull";
 import {NotFoundFull} from "./screens/NotFoundFull";
 import {PrimarySpinner} from "./spinners/PrimarySpinner";
+import {BoldText} from "./texts/BoldText";
+import {CardTitle} from "./texts/CardTitle";
+import {NormalText} from "./texts/NormalText";
+import {NormalTextCentered} from "./texts/NormalTextCentered";
 import {CenterWrapper} from "./wrappers/CenterWrapper";
 import {ScreenWrapper} from "./wrappers/ScreenWrapper";
 import {TouchKeyboardDismiss} from "./wrappers/TouchKeyboardDismiss";
@@ -43,6 +48,11 @@ export class Components {
     <DangerButton theme={this.theme} {...props} />
   );
   LinkButton: ClassFC<typeof LinkButton> = (props) => <LinkButton theme={this.theme} {...props} />;
+
+  // Cards
+  PrimaryCard: ClassFC<typeof PrimaryCard> = (props) => (
+    <PrimaryCard theme={this.theme} {...props} />
+  );
 
   // Carousels
   DefaultCarousel = DefaultCarousel;
@@ -76,6 +86,14 @@ export class Components {
   // Spinners
   PrimarySpinner: ClassFC<typeof PrimarySpinner> = (props) => (
     <PrimarySpinner theme={this.theme} {...props} />
+  );
+
+  // Texts
+  BoldText: ClassFC<typeof BoldText> = (props) => <BoldText theme={this.theme} {...props} />;
+  CardTitle: ClassFC<typeof CardTitle> = (props) => <CardTitle theme={this.theme} {...props} />;
+  NormalText: ClassFC<typeof NormalText> = (props) => <NormalText theme={this.theme} {...props} />;
+  NormalTextCentered: ClassFC<typeof NormalTextCentered> = (props) => (
+    <NormalTextCentered theme={this.theme} {...props} />
   );
 
   // Wrappers

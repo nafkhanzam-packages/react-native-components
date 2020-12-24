@@ -16,6 +16,7 @@ export const LinkButton: CompFC<FunctionalDefaultButtonProps> = (props) => {
         borderColor: colors.transparent,
         textColor: colors.primary,
         disabledTextColor: colors.darkGrey,
+        shadowColor: colors.transparent,
         textDecorationLine: "underline",
       }}>
       {props.children}
