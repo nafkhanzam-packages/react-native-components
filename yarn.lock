@@ -763,10 +763,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@nafkhanzam/react-architecture@^0.0.40":
-  version "0.0.40"
-  resolved "https://npm.pkg.github.com/download/@nafkhanzam/react-architecture/0.0.40/c3bbfd191cf8d9af730b812b61c34dc3ae164a7e6976e983f37e8307a3af0b92#ccb49b9cb27c42d2ad05cce82d8a418adeff5f24"
-  integrity sha512-cwyVGUG1ePhyHAB5AQXYPTPVyV8+F8yjwhHlu99DUt6eSARm/T87Y2VI5MXqsmUlxGt4hrEvbhFGv3AZ1WKbaw==
+"@nafkhanzam/react-architecture@^0.0.47":
+  version "0.0.47"
+  resolved "https://npm.pkg.github.com/download/@nafkhanzam/react-architecture/0.0.47/78668918eeffdcacb4d32ea04fd7c7da68fb0f734ab1bd79578cf5830a8389bd#bcb698c4895355e5081da9b5028a2efb90cf5978"
+  integrity sha512-uXPs6D8oHt4EMhHnvuf2VKCidvncK2nEqDVpOVPn0t/hcAcuc4ldEbFAsWQ2a4QF92fLAdUbo9516gJ/ShWRKQ==
   dependencies:
     "@react-native-async-storage/async-storage" "^1.13.2"
     axios "^0.21.1"

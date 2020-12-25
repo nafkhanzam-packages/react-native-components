@@ -16,7 +16,7 @@ const SearchBar: CompFC<{
   } = props;
 
   return (
-    <View style={{paddingHorizontal: 20}}>
+    <View>
       <View
         style={{
           flexDirection: "row",

@@ -1,14 +1,17 @@
 import {useIsFocused} from "@react-navigation/native";
 import {Button, Header, Icon, Left, Right, Title, View} from "native-base";
 import React, {ReactNode} from "react";
-import {StatusBar} from "react-native";
+import {StatusBar, ScrollView} from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context";
 import {CompFC} from "../../types";
 
 const FocusAwareStatusBar: React.FC<StatusBar["props"]> = (props) => {
-  const isFocused = useIsFocused();
-
-  return isFocused ? <StatusBar {...props} /> : null;
+  try {
+    const isFocused = useIsFocused();
+    return isFocused ? <StatusBar {...props} /> : null;
+  } catch (error) {
+    return null;
+  }
 };
 
 export const ScreenWrapper: CompFC<{
@@ -21,6 +24,7 @@ export const ScreenWrapper: CompFC<{
     textColor?: string;
     rightComponent?: ReactNode;
   };
+  noScroll?: boolean;
 }> = (props) => {
   const {
     header,
@@ -77,7 +81,7 @@ export const ScreenWrapper: CompFC<{
             </Header>
           </>
         )}
-        {props.children}
+        {props.noScroll ? props.children : <ScrollView>{props.children}</ScrollView>}
       </View>
     </SafeAreaView>
   );
