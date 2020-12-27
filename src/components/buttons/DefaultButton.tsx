@@ -34,6 +34,7 @@ export type StyleDefaultButtonProps = {
   backgroundColor?: Color;
   disabledBackgroundColor?: Color;
   borderColor?: Color;
+  disabledBorderColor?: Color;
   textColor?: Color;
   disabledTextColor?: Color;
   loadingTextColor?: Color;
@@ -54,7 +55,8 @@ export const DefaultButton: CompFC<{
       disabled={disabled || loading}
       style={{
         backgroundColor: disabled ? sProps.disabledBackgroundColor : sProps.backgroundColor,
-        borderColor: sProps.borderColor,
+        borderColor: disabled ? sProps.disabledBorderColor : sProps.borderColor,
+        borderWidth: sProps.borderColor ? 2 : 0,
         borderRadius: 5,
         elevation: sProps.noShadow ? undefined : 2,
         height: 48,

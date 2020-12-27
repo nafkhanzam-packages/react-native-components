@@ -17,6 +17,7 @@ import {PrimaryTextInput} from "./inputs/PrimaryTextInput";
 import SearchBar from "./inputs/SearchBar";
 import {ErrorFull} from "./screens/ErrorFull";
 import {LoadingFull} from "./screens/LoadingFull";
+import {LoadingOverlay} from "./screens/LoadingOverlay";
 import {NotFoundFull} from "./screens/NotFoundFull";
 import {PrimarySpinner} from "./spinners/PrimarySpinner";
 import {BoldText} from "./texts/BoldText";
@@ -78,6 +79,9 @@ export class Components {
   ErrorFull: ClassFC<typeof ErrorFull> = (props) => <ErrorFull theme={this.theme} {...props} />;
   LoadingFull: ClassFC<typeof LoadingFull> = (props) => (
     <LoadingFull theme={this.theme} {...props} />
+  );
+  LoadingOverlay: ClassFC<typeof LoadingOverlay> = (props) => (
+    <LoadingOverlay theme={this.theme} {...props} />
   );
   NotFoundFull: ClassFC<typeof NotFoundFull> = (props) => (
     <NotFoundFull theme={this.theme} {...props} />

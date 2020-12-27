@@ -2,7 +2,7 @@ import React from "react";
 import {DefaultButton, FunctionalDefaultButtonProps} from "./DefaultButton";
 import {CompFC} from "../../types";
 
-export const DangerButton: CompFC<FunctionalDefaultButtonProps> = (props) => {
+export const OutlinedSecondaryButton: CompFC<FunctionalDefaultButtonProps> = (props) => {
   const {theme} = props;
   const {colors} = theme;
 
@@ -11,9 +11,11 @@ export const DangerButton: CompFC<FunctionalDefaultButtonProps> = (props) => {
       theme={theme}
       fProps={props}
       sProps={{
-        backgroundColor: colors.red,
-        disabledBackgroundColor: colors.lightGrey,
-        textColor: colors.white,
+        backgroundColor: colors.offWhite,
+        disabledBackgroundColor: colors.offWhite,
+        borderColor: colors.secondary,
+        disabledBorderColor: colors.lighterGrey,
+        textColor: colors.secondary,
         disabledTextColor: colors.lighterGrey,
       }}>
       {props.children}

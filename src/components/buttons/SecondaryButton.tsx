@@ -11,11 +11,10 @@ export const SecondaryButton: CompFC<FunctionalDefaultButtonProps> = (props) => 
       theme={theme}
       fProps={props}
       sProps={{
-        backgroundColor: colors.offWhite,
-        disabledBackgroundColor: colors.offWhite,
-        borderColor: colors.secondary,
-        textColor: colors.secondary,
-        disabledTextColor: colors.lighterGrey,
+        backgroundColor: colors.secondary,
+        disabledBackgroundColor: colors.lighterGrey,
+        textColor: colors.white,
+        disabledTextColor: colors.white,
       }}>
       {props.children}
     </DefaultButton>
