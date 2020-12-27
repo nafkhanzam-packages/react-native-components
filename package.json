@@ -1,6 +1,6 @@
 {
   "name": "@nafkhanzam/react-native-components",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "repository": {
@@ -26,10 +26,10 @@
     "build": "tsc"
   },
   "peerDependencies": {
-    "react": "^17.0.1"
+    "react": "^16"
   },
   "devDependencies": {
-    "@types/react": "^17.0.0",
+    "@types/react": "^16",
     "@types/react-native": "^0.63.42",
     "@types/react-native-loading-spinner-overlay": "^0.5.2",
     "@types/react-native-snap-carousel": "^3.8.2",
