@@ -30,7 +30,7 @@ import {TouchKeyboardDismiss} from "./wrappers/TouchKeyboardDismiss";
 
 //! Hacky with "any"
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type ClassFC<FC extends CompFC<any>> = React.FC<Omit<Parameters<FC>[0], "theme">>;
+export type ClassFC<FC extends CompFC<any>> = React.FC<Omit<Parameters<FC>[0], "theme">>;
 
 export class Components {
   constructor(public theme: Theme) {}

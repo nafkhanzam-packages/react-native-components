@@ -13,7 +13,14 @@ export const PrimaryCard: CompFC<{title?: string}> = (props) => {
       style={{
         backgroundColor: colors.offWhite,
         borderRadius: 5,
-        elevation: 2,
+        elevation: 5,
+        shadowColor: colors.black,
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
         padding: 20,
       }}>
       {props.title && <CardTitle theme={props.theme}>{props.title}</CardTitle>}

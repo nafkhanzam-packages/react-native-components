@@ -37,6 +37,7 @@
     "@types/react-native-swiper": "^1.5.10",
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.16.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
