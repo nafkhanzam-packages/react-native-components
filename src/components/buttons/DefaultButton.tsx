@@ -43,10 +43,12 @@ export type StyleDefaultButtonProps = {
   noShadow?: boolean;
 };
 
-export const DefaultButton: CompFC<{
+type PropsType = {
   fProps: FunctionalDefaultButtonProps;
   sProps: StyleDefaultButtonProps;
-}> = (props) => {
+};
+
+export const DefaultButton: CompFC<PropsType> = (props) => {
   const {fProps, sProps, theme} = props;
   const {disabled, loading} = fProps;
 
