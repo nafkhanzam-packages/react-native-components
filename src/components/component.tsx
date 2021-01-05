@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
+import React, {PropsWithChildren, ReactNode} from "react";
 import {Theme} from "../theme";
-import {CompFC} from "../types";
+import {CompFC, CompProps} from "../types";
 import {DangerButton} from "./buttons/DangerButton";
 import {DefaultButton} from "./buttons/DefaultButton";
 import {LinkButton} from "./buttons/LinkButton";
@@ -29,14 +29,12 @@ import {CenterWrapper} from "./wrappers/CenterWrapper";
 import {ScreenWrapper} from "./wrappers/ScreenWrapper";
 import {TouchKeyboardDismiss} from "./wrappers/TouchKeyboardDismiss";
 
-export type ClassFC<FC extends CompFC<any>> = React.FC<Omit<Parameters<FC>[0], "theme">>;
-
 export class Components {
   constructor(public theme: Theme) {}
 
   // eslint-disable-next-line react/display-name
-  protected _ = (Component: CompFC<any>): ClassFC<CompFC<any>> => (props) => (
-    <Component theme={this.theme} {...props} />
+  protected _ = <T,>(Component: CompFC<T>): CompFC<T> => (props) => (
+    <Component {...props} theme={this.theme} />
   );
 
   // Buttons

@@ -9,6 +9,8 @@ export type FunctionalDefaultButtonProps = {
   onPress?: (event: GestureResponderEvent) => void;
   disabled?: boolean;
   loading?: boolean;
+  fontSize?: number;
+  iconSize?: number;
   icon?: {
     name: string;
     iconStyle:
@@ -91,13 +93,13 @@ export const DefaultButton: CompFC<PropsType> = (props) => {
                 <Icon
                   name={fProps.icon.name}
                   type={fProps.icon.iconStyle}
-                  style={{marginRight: 8, color: "white", fontSize: 20}}
+                  style={{marginRight: 8, color: "white", fontSize: fProps.iconSize ?? 20}}
                 />
               )}
               <Text
                 style={{
                   color: disabled ? sProps.disabledTextColor : sProps.textColor,
-                  fontSize: 16,
+                  fontSize: fProps.fontSize ?? 16,
                   fontWeight: "bold",
                   textAlign: "center",
                   textDecorationLine: sProps.textDecorationLine,
