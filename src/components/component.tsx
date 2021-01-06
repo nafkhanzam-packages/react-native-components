@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, {PropsWithChildren, ReactNode} from "react";
+import React from "react";
 import {Theme} from "../theme";
-import {CompFC, CompProps} from "../types";
+import {CompFC} from "../types";
 import {DangerButton} from "./buttons/DangerButton";
 import {DefaultButton} from "./buttons/DefaultButton";
 import {LinkButton} from "./buttons/LinkButton";
@@ -29,23 +29,30 @@ import {CenterWrapper} from "./wrappers/CenterWrapper";
 import {ScreenWrapper} from "./wrappers/ScreenWrapper";
 import {TouchKeyboardDismiss} from "./wrappers/TouchKeyboardDismiss";
 
+export type ClassFC<FC extends CompFC<any>> = React.FC<Omit<Parameters<FC>[0], "theme">>;
+
 export class Components {
   constructor(public theme: Theme) {}
 
-  // eslint-disable-next-line react/display-name
-  protected _ = <T,>(Component: CompFC<T>): CompFC<T> => (props) => (
-    <Component {...props} theme={this.theme} />
-  );
-
   // Buttons
-  DefaultButton = this._(DefaultButton);
-  PrimaryButton = this._(PrimaryButton);
-  SecondaryButton = this._(SecondaryButton);
-  DangerButton = this._(DangerButton);
-  LinkButton = this._(LinkButton);
+  DefaultButton: ClassFC<typeof DefaultButton> = (props) => (
+    <DefaultButton theme={this.theme} {...props} />
+  );
+  PrimaryButton: ClassFC<typeof PrimaryButton> = (props) => (
+    <PrimaryButton theme={this.theme} {...props} />
+  );
+  SecondaryButton: ClassFC<typeof SecondaryButton> = (props) => (
+    <SecondaryButton theme={this.theme} {...props} />
+  );
+  DangerButton: ClassFC<typeof DangerButton> = (props) => (
+    <DangerButton theme={this.theme} {...props} />
+  );
+  LinkButton: ClassFC<typeof LinkButton> = (props) => <LinkButton theme={this.theme} {...props} />;
 
   // Cards
-  PrimaryCard = this._(PrimaryCard);
+  PrimaryCard: ClassFC<typeof PrimaryCard> = (props) => (
+    <PrimaryCard theme={this.theme} {...props} />
+  );
 
   // Carousels
   DefaultCarousel = DefaultCarousel;
@@ -56,28 +63,50 @@ export class Components {
   ScalableImage = ScalableImage;
 
   // Inputs
-  PrimaryDateInput = this._(PrimaryDateInput);
-  PrimaryPickerInput = this._(PrimaryPickerInput);
-  PrimaryTextInput = this._(PrimaryTextInput);
-  SearchBar = this._(SearchBar);
+  PrimaryDateInput: ClassFC<typeof PrimaryDateInput> = (props) => (
+    <PrimaryDateInput theme={this.theme} {...props} />
+  );
+  PrimaryPickerInput: ClassFC<typeof PrimaryPickerInput> = (props) => (
+    <PrimaryPickerInput theme={this.theme} {...props} />
+  );
+  PrimaryTextInput: ClassFC<typeof PrimaryTextInput> = (props) => (
+    <PrimaryTextInput theme={this.theme} {...props} />
+  );
+  SearchBar: ClassFC<typeof SearchBar> = (props) => <SearchBar theme={this.theme} {...props} />;
 
   // Screens
-  ErrorFull = this._(ErrorFull);
-  LoadingFull = this._(LoadingFull);
-  LoadingOverlay = this._(LoadingOverlay);
-  NotFoundFull = this._(NotFoundFull);
+  ErrorFull: ClassFC<typeof ErrorFull> = (props) => <ErrorFull theme={this.theme} {...props} />;
+  LoadingFull: ClassFC<typeof LoadingFull> = (props) => (
+    <LoadingFull theme={this.theme} {...props} />
+  );
+  LoadingOverlay: ClassFC<typeof LoadingOverlay> = (props) => (
+    <LoadingOverlay theme={this.theme} {...props} />
+  );
+  NotFoundFull: ClassFC<typeof NotFoundFull> = (props) => (
+    <NotFoundFull theme={this.theme} {...props} />
+  );
 
   // Spinners
-  PrimarySpinner = this._(PrimarySpinner);
+  PrimarySpinner: ClassFC<typeof PrimarySpinner> = (props) => (
+    <PrimarySpinner theme={this.theme} {...props} />
+  );
 
   // Texts
-  BoldText = this._(BoldText);
-  CardTitle = this._(CardTitle);
-  NormalText = this._(NormalText);
-  NormalTextCentered = this._(NormalTextCentered);
+  BoldText: ClassFC<typeof BoldText> = (props) => <BoldText theme={this.theme} {...props} />;
+  CardTitle: ClassFC<typeof CardTitle> = (props) => <CardTitle theme={this.theme} {...props} />;
+  NormalText: ClassFC<typeof NormalText> = (props) => <NormalText theme={this.theme} {...props} />;
+  NormalTextCentered: ClassFC<typeof NormalTextCentered> = (props) => (
+    <NormalTextCentered theme={this.theme} {...props} />
+  );
 
   // Wrappers
-  CenterWrapper = this._(CenterWrapper);
-  ScreenWrapper = this._(ScreenWrapper);
-  TouchKeyboardDismiss = this._(TouchKeyboardDismiss);
+  CenterWrapper: ClassFC<typeof CenterWrapper> = (props) => (
+    <CenterWrapper theme={this.theme} {...props} />
+  );
+  ScreenWrapper: ClassFC<typeof ScreenWrapper> = (props) => (
+    <ScreenWrapper theme={this.theme} {...props} />
+  );
+  TouchKeyboardDismiss: ClassFC<typeof TouchKeyboardDismiss> = (props) => (
+    <TouchKeyboardDismiss theme={this.theme} {...props} />
+  );
 }
