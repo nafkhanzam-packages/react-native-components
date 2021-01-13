@@ -1,6 +1,6 @@
 {
   "name": "@nafkhanzam/react-native-components",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "repository": {
@@ -23,36 +23,39 @@
   "homepage": "https://github.com/nafkhanzam/react-native-components#readme",
   "scripts": {
     "prepublish": "yarn build",
-    "build": "tsc"
+    "build": "tsc",
+    "generate": "ts-node generateExports"
   },
   "peerDependencies": {
     "react": "^16"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
-    "@types/react-native": "^0.63.42",
+    "@types/react-native": "^0.63.45",
     "@types/react-native-loading-spinner-overlay": "^0.5.2",
     "@types/react-native-snap-carousel": "^3.8.2",
     "@types/react-native-star-rating": "^1.1.1",
     "@types/react-native-swiper": "^1.5.10",
-    "@typescript-eslint/eslint-plugin": "^4.10.0",
-    "@typescript-eslint/parser": "^4.10.0",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.16.0",
-    "eslint-plugin-react": "^7.21.5",
+    "eslint": "^7.17.0",
+    "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "export-generator": "^1.2.0",
     "prettier": "^2.2.1",
     "typescript": "^4.1.3"
   },
   "dependencies": {
-    "@nafkhanzam/react-architecture": "^0.0.93",
+    "@nafkhanzam/react-architecture": "^0.0.96",
     "@react-navigation/native": "^5.8.10",
-    "native-base": "^2.15.0",
+    "native-base": "^2.15.2",
     "react-native": "^0.63.4",
     "react-native-blank-spacer": "^0.0.2",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-loading-spinner-overlay": "^2.0.0",
     "react-native-modal": "^11.6.1",
+    "react-native-paper": "^4.6.0",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.16.1",
     "react-native-snap-carousel": "^3.9.1",
