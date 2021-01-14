@@ -1,4 +1,5 @@
 export * from "./common/Carousel";
+export * from "./common/icons";
 export * from "./common/images/CoverBackground";
 export * from "./common/images/FitImage";
 export * from "./common/inputs/DatePicker";
@@ -7,3 +8,4 @@ export * from "./common/inputs/Picker";
 export * from "./common/inputs/TimePicker";
 export * from "./common/wrappers/CenterWrapper";
 export * from "./common/wrappers/ScreenWrapper";
+export * from "./utils";
