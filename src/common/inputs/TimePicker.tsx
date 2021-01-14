@@ -1,4 +1,4 @@
-import DateTimePicker from "@react-native-community/datetimepicker";
+import RNDateTimePicker from "@react-native-community/datetimepicker";
 import React from "react";
 
 export type TimePickerType = {
@@ -15,7 +15,7 @@ export const TimePicker: React.FC<{
   const jsDate = new Date(0, 0, 0, time.hour, time.minute);
 
   return (
-    <DateTimePicker
+    <RNDateTimePicker
       value={jsDate}
       mode="date"
       is24Hour
