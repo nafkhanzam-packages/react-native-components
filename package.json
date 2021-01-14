@@ -1,6 +1,6 @@
 {
   "name": "@nafkhanzam/react-native-components",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "repository": {
@@ -52,7 +52,7 @@
     "@nafkhanzam/common-utils": "^0.0.12",
     "@nafkhanzam/react-architecture": "^0.0.97",
     "@react-native-community/datetimepicker": "^3.0.9",
-    "@react-native-community/picker": "^1.8.1",
+    "@react-native-picker/picker": "^1.9.10",
     "@react-navigation/native": "^5.8.10",
     "react-native": "^0.63.4",
     "react-native-blank-spacer": "^0.0.2",
