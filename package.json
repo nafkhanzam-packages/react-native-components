@@ -1,6 +1,6 @@
 {
   "name": "@nafkhanzam/react-native-components",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "repository": {
@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@nafkhanzam/common-utils": "^0.0.12",
-    "@nafkhanzam/react-architecture": "^0.0.97",
+    "@nafkhanzam/react-architecture": "^0.0.99",
     "@react-native-community/datetimepicker": "^3.0.9",
     "@react-native-picker/picker": "^1.9.10",
     "@react-navigation/native": "^5.8.10",
