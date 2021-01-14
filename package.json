@@ -1,6 +1,6 @@
 {
   "name": "@nafkhanzam/react-native-components",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "repository": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/nafkhanzam/react-native-components#readme",
   "scripts": {
-    "prepublish": "yarn build",
+    "prepublish": "yarn generate && yarn build",
     "build": "tsc",
     "generate": "ts-node generateExports",
     "pub": "yarn version --patch && npm pub"
