@@ -20,6 +20,6 @@
     "target": "ES2015",
     "outDir": "lib"
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "./generateExports.ts"],
   "exclude": ["node_modules"]
 }

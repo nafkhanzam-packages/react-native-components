@@ -1,3 +1,2 @@
-export * from "./theme";
-export * from "./components/component";
+export * from "./common/icons";
 export * from "./utils";

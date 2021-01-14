@@ -1,9 +1,14 @@
-import {getErrMessage} from "@nafkhanzam/react-architecture";
 import {Alert, PermissionsAndroid} from "react-native";
+import {formatToGql} from "@nafkhanzam/common-utils";
+
+const formatError = (err: unknown) => {
+  const {status: title = "Error!", message: msg} = formatToGql.toError(err);
+  return {title, msg};
+};
 
 const errExitAnyway = (err: unknown, onExitAnyway: () => void, onCancel?: () => void) => {
   console.error(err);
-  const {title, msg} = getErrMessage(err);
+  const {title, msg} = formatError(err);
   Alert.alert(
     title,
     msg,
@@ -40,7 +45,7 @@ const confirm = (title: string, message: string, onConfirm: () => void, onCancel
 export const alerts = {
   error: (err: unknown) => {
     console.error(err);
-    const {title, msg} = getErrMessage(err);
+    const {title, msg} = formatError(err);
     if (msg === "Network request failed") {
       Alert.alert(
         title,
