@@ -1,7 +1,7 @@
 import React from "react";
 import {ImageBackground, ImageSourcePropType} from "react-native";
 
-const CoverBackground: React.FC<{
+export const CoverBackground: React.FC<{
   source: ImageSourcePropType;
 }> = (props) => {
   return (
@@ -17,5 +17,3 @@ const CoverBackground: React.FC<{
     </ImageBackground>
   );
 };
-
-export default CoverBackground;

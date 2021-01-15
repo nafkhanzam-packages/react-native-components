@@ -7,7 +7,6 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FontAwesome5Pro from "react-native-vector-icons/FontAwesome5Pro";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import Foundation from "react-native-vector-icons/Foundation";
-import Icon from "react-native-vector-icons/Icon";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -23,7 +22,6 @@ export {
   FontAwesome5Pro,
   Fontisto,
   Foundation,
-  Icon,
   Ionicons,
   MaterialCommunityIcons,
   MaterialIcons,
