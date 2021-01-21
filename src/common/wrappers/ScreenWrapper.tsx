@@ -33,7 +33,7 @@ export const ScreenWrapper: React.FC<{
         {props.noScroll ? (
           props.children
         ) : (
-          <ScrollView keyboardShouldPersistTaps>{props.children}</ScrollView>
+          <ScrollView keyboardShouldPersistTaps="always">{props.children}</ScrollView>
         )}
       </View>
     </SafeAreaView>

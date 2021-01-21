@@ -780,10 +780,10 @@
     uuid "^8.3.2"
     zod "^1.11.11"
 
-"@nafkhanzam/react-architecture@^0.0.99":
-  version "0.0.99"
-  resolved "https://npm.pkg.github.com/download/@nafkhanzam/react-architecture/0.0.99/05a26cd4667b33ddf89b9ceacd6f8b0adbd9fdedd55dfbf7bfd17d46027103b6#fc87471ca284ed716fb7fd760a4600ee7d4fc16a"
-  integrity sha512-M14EvoGDOUuO4dFxGLadx5Xr9YATIqgUI9hcB0qpRr7RNd9vtQYDCjm45KYHOsR8PEwZVMOG3pnTbkFaDzpdzQ==
+"@nafkhanzam/react-architecture@^0.0.101":
+  version "0.0.101"
+  resolved "https://npm.pkg.github.com/download/@nafkhanzam/react-architecture/0.0.101/4140d0889401409a24a8a23b11c4b3f779c7a7bbf511368d92b4b72544e063df#061cccaa8df311cbc143ae18f0c06ca5d1e7b7c8"
+  integrity sha512-FJp9beOhawEuIyGjjFqxSwBkc3AFK4FgAKcBatMM1CTRBeP3d/Ky0Wbd6s1q7LB9XlO7Js/LhWLjvESxCmopHA==
   dependencies:
     "@react-native-async-storage/async-storage" "^1.13.2"
     axios "^0.21.1"
