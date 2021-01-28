@@ -10,6 +10,7 @@ import {TimePicker} from "./inputs/TimePicker";
 import {CenterWrapper} from "./wrappers/CenterWrapper";
 import {ScreenWrapper} from "./wrappers/ScreenWrapper";
 import BlankSpacer from "react-native-blank-spacer";
+import {FetchFlatList} from "./FetchFlatList";
 
 export class EssentialComponents {
   icons = icons;
@@ -25,4 +26,6 @@ export class EssentialComponents {
   CenterWrapper = CenterWrapper;
   ScreenWrapper = ScreenWrapper;
   BS = BlankSpacer;
+
+  FetchFlatList = FetchFlatList;
 }
