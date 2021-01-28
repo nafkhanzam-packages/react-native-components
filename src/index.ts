@@ -1,4 +1,5 @@
 export * from "./common/Carousel";
+export * from "./common/FetchFlatList";
 export * from "./common/icons";
 export * from "./common/images/CoverBackground";
 export * from "./common/images/CoverImage";
