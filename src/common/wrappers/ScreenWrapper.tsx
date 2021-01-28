@@ -17,6 +17,7 @@ export const ScreenWrapper: React.FC<{
   statusBarContentStyle?: "dark-content" | "light-content" | "default";
   noScroll?: boolean;
   bgColor?: string;
+  nestedScrollEnabled?: boolean;
 }> = (props) => {
   return (
     <SafeAreaView
@@ -33,7 +34,11 @@ export const ScreenWrapper: React.FC<{
         {props.noScroll ? (
           props.children
         ) : (
-          <ScrollView keyboardShouldPersistTaps="always">{props.children}</ScrollView>
+          <ScrollView
+            nestedScrollEnabled={props.nestedScrollEnabled}
+            keyboardShouldPersistTaps="always">
+            {props.children}
+          </ScrollView>
         )}
       </View>
     </SafeAreaView>
