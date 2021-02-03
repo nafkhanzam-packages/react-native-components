@@ -13,6 +13,9 @@ export const toDateTimePickerType = (dateTime: Date): DateTimePickerType => ({
   minute: dateTime.getMinutes(),
 });
 
+export const fromDateTimePickerType = (dateTime: DateTimePickerType): Date =>
+  new Date(dateTime.year, dateTime.month, dateTime.date, dateTime.hour, dateTime.minute);
+
 export const DateTimePicker: React.FC<{
   dateTime: DateTimePickerType;
   setDateTime: (dateTime: DateTimePickerType) => void;
