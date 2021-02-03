@@ -5,6 +5,14 @@ import {TimePickerType} from "./TimePicker";
 
 export type DateTimePickerType = DatePickerType & TimePickerType;
 
+export const toDateTimePickerType = (dateTime: Date): DateTimePickerType => ({
+  year: dateTime.getFullYear(),
+  month: dateTime.getMonth(),
+  date: dateTime.getDate(),
+  hour: dateTime.getHours(),
+  minute: dateTime.getMinutes(),
+});
+
 export const DateTimePicker: React.FC<{
   dateTime: DateTimePickerType;
   setDateTime: (dateTime: DateTimePickerType) => void;

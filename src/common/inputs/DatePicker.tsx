@@ -7,6 +7,12 @@ export type DatePickerType = {
   year: number;
 };
 
+export const toDatePickerType = (date: Date): DatePickerType => ({
+  year: date.getFullYear(),
+  month: date.getMonth(),
+  date: date.getDate(),
+});
+
 export const DatePicker: React.FC<{
   date: DatePickerType;
   setDate: (date: DatePickerType) => void;

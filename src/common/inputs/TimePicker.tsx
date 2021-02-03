@@ -6,6 +6,11 @@ export type TimePickerType = {
   minute: number;
 };
 
+export const toTimePickerType = (time: Date): TimePickerType => ({
+  hour: time.getHours(),
+  minute: time.getMinutes(),
+});
+
 export const TimePicker: React.FC<{
   time: TimePickerType;
   setTime: (time: TimePickerType) => void;
