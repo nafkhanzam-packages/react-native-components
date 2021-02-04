@@ -29,7 +29,10 @@ export const FetchFlatList = <T,>(props: {
   renderItem: (args: ListRenderItemInfo<T>) => JSX.Element;
   autoRefresh?: number;
   components: Components;
-  flatListProps?: FlatListProps<T>;
+  flatListProps?: Omit<
+    FlatListProps<T>,
+    "onRefresh" | "refreshing" | "data" | "keyExtractor" | "renderItem" | "ListEmptyComponent"
+  >;
 }): ReactElement => {
   const [status, setStatus] = useState<Status>("FIRST_RENDER");
   const [data, setData] = useState(props.firstData ?? []);
