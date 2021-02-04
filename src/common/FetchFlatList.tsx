@@ -42,10 +42,12 @@ export const FetchFlatList = <T,>(props: FetchFlatListProps<T>): ReactElement =>
   const [error, setError] = useState<unknown>();
   const mountedRef = useRef(true);
 
+  const {fetchDatas: origFetchDatas} = props;
+
   const fetchDatas = useCallback(async () => {
     try {
       setStatus("FETCHING");
-      const res = await props.fetchDatas();
+      const res = await origFetchDatas();
       if (!mountedRef.current) {
         return;
       }
@@ -58,7 +60,7 @@ export const FetchFlatList = <T,>(props: FetchFlatListProps<T>): ReactElement =>
       setError(error);
       setStatus("ERROR");
     }
-  }, [props]);
+  }, [origFetchDatas]);
 
   useEffect(() => {
     mountedRef.current = true;
