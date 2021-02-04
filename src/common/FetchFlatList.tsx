@@ -6,6 +6,7 @@ type Status = "FIRST_RENDER" | "FETCHING" | "ERROR" | "DONE";
 type Components = {
   error: (err: unknown) => ReactElement;
   empty: ReactElement;
+  loading: ReactElement;
 };
 
 const mapComp = (
@@ -17,6 +18,8 @@ const mapComp = (
   switch (status) {
     case "ERROR":
       return comps.error(error);
+    case "FIRST_RENDER":
+      return comps.loading;
     case "DONE":
       if (empty) return comps.empty;
   }
@@ -46,7 +49,9 @@ export const FetchFlatList = <T,>(props: FetchFlatListProps<T>): ReactElement =>
 
   const fetchDatas = useCallback(async () => {
     try {
-      setStatus("FETCHING");
+      if (status !== "FIRST_RENDER") {
+        setStatus("FETCHING");
+      }
       const res = await origFetchDatas();
       if (!mountedRef.current) {
         return;
@@ -60,7 +65,7 @@ export const FetchFlatList = <T,>(props: FetchFlatListProps<T>): ReactElement =>
       setError(error);
       setStatus("ERROR");
     }
-  }, [origFetchDatas]);
+  }, [origFetchDatas, status]);
 
   useEffect(() => {
     mountedRef.current = true;
