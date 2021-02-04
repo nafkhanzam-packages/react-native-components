@@ -25,6 +25,7 @@ const mapComp = (
 export type FetchFlatListProps<T> = {
   firstData?: T[];
   fetchDatas: () => Promise<T[]>;
+  nonRefreshable?: boolean;
   keyExtractor: (item: T, index: number) => string;
   renderItem: (args: ListRenderItemInfo<T>) => JSX.Element;
   autoRefresh?: number;
@@ -61,14 +62,11 @@ export const FetchFlatList = <T,>(props: FetchFlatListProps<T>): ReactElement =>
 
   useEffect(() => {
     mountedRef.current = true;
-    if (data) {
-      fetchDatas();
-    }
+    fetchDatas();
     return () => {
       mountedRef.current = false;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [fetchDatas]);
 
   useInterval(
     () => {
@@ -82,7 +80,7 @@ export const FetchFlatList = <T,>(props: FetchFlatListProps<T>): ReactElement =>
 
   return (
     <FlatList<T>
-      onRefresh={fetchDatas}
+      onRefresh={props.nonRefreshable ? undefined : fetchDatas}
       refreshing={status === "FETCHING"}
       data={status !== "ERROR" ? data : []}
       keyExtractor={props.keyExtractor}
