@@ -1,6 +1,6 @@
 import {useInterval} from "@nafkhanzam/react-architecture";
 import React, {ReactElement, useCallback, useEffect, useRef, useState} from "react";
-import {FlatList, ListRenderItemInfo} from "react-native";
+import {FlatList, FlatListProps, ListRenderItemInfo} from "react-native";
 
 type Status = "FIRST_RENDER" | "FETCHING" | "ERROR" | "DONE";
 type Components = {
@@ -29,6 +29,7 @@ export const FetchFlatList = <T,>(props: {
   renderItem: (args: ListRenderItemInfo<T>) => JSX.Element;
   autoRefresh?: number;
   components: Components;
+  flatListProps?: FlatListProps<T>;
 }): ReactElement => {
   const [status, setStatus] = useState<Status>("FIRST_RENDER");
   const [data, setData] = useState(props.firstData ?? []);
@@ -82,6 +83,7 @@ export const FetchFlatList = <T,>(props: {
       keyExtractor={props.keyExtractor}
       renderItem={props.renderItem}
       ListEmptyComponent={mapComp(status, props.components, !data.length, error)}
+      {...props.flatListProps}
     />
   );
 };

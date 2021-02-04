@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/nafkhanzam/react-native-components#readme",
   "scripts": {
-    "prepublish": "yarn generate && yarn build",
+    "prepublishOnly": "yarn generate && yarn build",
     "build": "tsc",
     "generate": "ts-node generateExports",
     "pub": "yarn version --patch && npm pub"
