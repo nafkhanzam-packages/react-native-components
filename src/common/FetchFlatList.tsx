@@ -22,7 +22,7 @@ const mapComp = (
   }
 };
 
-export const FetchFlatList = <T,>(props: {
+export type FetchFlatListProps<T> = {
   firstData?: T[];
   fetchDatas: () => Promise<T[]>;
   keyExtractor: (item: T, index: number) => string;
@@ -33,7 +33,9 @@ export const FetchFlatList = <T,>(props: {
     FlatListProps<T>,
     "onRefresh" | "refreshing" | "data" | "keyExtractor" | "renderItem" | "ListEmptyComponent"
   >;
-}): ReactElement => {
+};
+
+export const FetchFlatList = <T,>(props: FetchFlatListProps<T>): ReactElement => {
   const [status, setStatus] = useState<Status>("FIRST_RENDER");
   const [data, setData] = useState(props.firstData ?? []);
   const [error, setError] = useState<unknown>();
