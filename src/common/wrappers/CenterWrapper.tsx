@@ -12,7 +12,8 @@ export const CenterWrapper: React.FC<{type?: "horizontal-only" | "vertical-only"
         alignItems: props.type === "vertical-only" ? undefined : "center",
         // height: props.type === "horizontal-only" ? undefined : "100%",
         justifyContent: props.type === "horizontal-only" ? undefined : "center",
-      }}>
+      }}
+    >
       {props.children}
     </View>
   );

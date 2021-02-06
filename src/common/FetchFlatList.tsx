@@ -73,7 +73,8 @@ export const FetchFlatList = <T,>(props: FetchFlatListProps<T>): ReactElement =>
     return () => {
       mountedRef.current = false;
     };
-  }, [fetchDatas]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [origFetchDatas]);
 
   useInterval(
     () => {

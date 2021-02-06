@@ -12,7 +12,8 @@ export const Picker: React.FC<{
     <RNPicker
       mode={props.mode}
       selectedValue={props.selectedIndex}
-      onValueChange={(_, index) => props.setSelectedIndex(index)}>
+      onValueChange={(_, index) => props.setSelectedIndex(index)}
+    >
       {props.labels.map((v, i) => (
         <RNPicker.Item key={i} label={v} value={v} />
       ))}

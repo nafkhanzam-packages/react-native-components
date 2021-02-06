@@ -24,7 +24,8 @@ export const ScreenWrapper: React.FC<{
       style={{
         backgroundColor: props.bgColor,
         flex: 1,
-      }}>
+      }}
+    >
       <FocusAwareStatusBar
         barStyle={props.statusBarContentStyle}
         backgroundColor={props.statusBarColor}
@@ -36,7 +37,8 @@ export const ScreenWrapper: React.FC<{
         ) : (
           <ScrollView
             nestedScrollEnabled={props.nestedScrollEnabled}
-            keyboardShouldPersistTaps="always">
+            keyboardShouldPersistTaps="always"
+          >
             {props.children}
           </ScrollView>
         )}
