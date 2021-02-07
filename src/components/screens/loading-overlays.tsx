@@ -1,7 +1,7 @@
 import RNLoadingOverlay from "react-native-loading-spinner-overlay";
 import React from "react";
 import {TextStyle} from "react-native";
-import {CompFC} from "..";
+import {CompFC, Theme} from "..";
 
 type Props = {
   visible?: boolean;

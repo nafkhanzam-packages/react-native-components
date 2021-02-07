@@ -1,7 +1,7 @@
 import {extract} from "../utils";
 import React from "react";
 import {TouchableOpacity} from "react-native";
-import {CompFC, Components} from "..";
+import {CompFC, Components, Theme} from "..";
 import {TextType} from "../texts/texts";
 
 type Props = {

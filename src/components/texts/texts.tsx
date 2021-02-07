@@ -1,7 +1,7 @@
 import {fontWeights} from "../utils";
 import React from "react";
 import {Text as RNText, TextStyle} from "react-native";
-import {CompFC} from "..";
+import {CompFC, Theme} from "..";
 
 type Props = {
   color?: string;

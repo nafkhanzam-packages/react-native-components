@@ -1,6 +1,6 @@
 import React from "react";
 import RNSwiper from "react-native-swiper";
-import {CompFC} from ".";
+import {CompFC, Theme} from ".";
 
 type Props = {
   loop?: boolean;

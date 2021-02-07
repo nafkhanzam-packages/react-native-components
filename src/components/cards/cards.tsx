@@ -1,6 +1,6 @@
 import React from "react";
 import {View} from "react-native";
-import {CompFC} from "..";
+import {CompFC, Theme} from "..";
 
 type Props = {
   onPress?: () => void;
