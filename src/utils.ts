@@ -18,8 +18,15 @@ const formatError = (err: unknown) => {
   return {title, msg};
 };
 
-const errExitAnyway = (err: unknown, onExitAnyway: () => void, onCancel?: () => void) => {
-  console.error(err);
+const errExitAnyway = (
+  err: unknown,
+  onExitAnyway: () => void,
+  onCancel?: () => void,
+  printError = true,
+) => {
+  if (printError) {
+    console.error(err);
+  }
   const {title, msg} = formatError(err);
   Alert.alert(
     title,
