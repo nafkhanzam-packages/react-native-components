@@ -39,7 +39,7 @@ const BaseCard: React.FC<{props: Props; typeProps: TypeProps}> = ({props, typePr
   );
 };
 
-type Type = "main" | "option" | "catering" | "category" | TypeProps;
+type Type = "main" | TypeProps;
 
 const typeMap = (type: Type, theme: Theme1): TypeProps => {
   if (typeof type !== "string") {
@@ -52,25 +52,6 @@ const typeMap = (type: Type, theme: Theme1): TypeProps => {
         shadowColor: theme.colors.shadow,
         elevation: 2,
         borderRadius: 20,
-      };
-    case "option":
-      return {
-        color: theme.colors.white,
-        borderWidth: 1,
-        borderColor: theme.colors.black,
-      };
-    case "catering":
-      return {
-        color: theme.colors.primary.light,
-        borderWidth: 1,
-        borderColor: theme.colors.black,
-      };
-    case "category":
-      return {
-        color: theme.colors.white,
-        borderWidth: 1,
-        borderColor: theme.colors.mainForm.border1,
-        padding: 0,
       };
   }
 };

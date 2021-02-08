@@ -84,7 +84,7 @@ const BaseTextField: React.FC<{
   );
 };
 
-type Type = "main" | "search" | "catering" | "alamat" | "alamatwhite" | TypeProps;
+type Type = "main" | "search" | TypeProps;
 
 const typeMap = (type: Type, comp: Components1): TypeProps => {
   if (typeof type !== "string") {
@@ -112,34 +112,6 @@ const typeMap = (type: Type, comp: Components1): TypeProps => {
         placeholderColor: theme.colors.mainForm.placeholder,
         borderColor: theme.colors.mainForm.border,
         backgroundColor: theme.colors.mainForm.background,
-        mode: "outlined",
-        fonts,
-      };
-    case "alamat":
-      return {
-        color: theme.colors.mainForm.text,
-        placeholderColor: theme.colors.mainForm.placeholder,
-        borderColor: theme.colors.mainForm.border,
-        backgroundColor: theme.colors.primary.light,
-        mode: "flat",
-        fonts,
-      };
-    case "alamatwhite":
-      return {
-        color: theme.colors.mainForm.text,
-        placeholderColor: theme.colors.mainForm.placeholder,
-        borderColor: theme.colors.black,
-        backgroundColor: theme.colors.white,
-        mode: "flat",
-        dense: true,
-        fonts,
-      };
-    case "catering":
-      return {
-        color: theme.colors.mainForm.text,
-        placeholderColor: theme.colors.mainForm.placeholder,
-        borderColor: theme.colors.mainForm.border,
-        backgroundColor: theme.colors.primary.light,
         mode: "outlined",
         fonts,
       };
