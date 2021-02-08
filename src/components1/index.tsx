@@ -6,12 +6,7 @@ import {LoadingOverlay} from "./screens/loading-overlays";
 import {Spinner} from "./spinners";
 import {Swiper} from "./swipers";
 import {Text} from "./texts/texts";
-import LinearGradient from "react-native-linear-gradient";
 import {ChatButton, CrowdQuantity, Distance, DollarPricing, InfoCircle, Rating} from "./mini";
-import Modal from "react-native-modal";
-import CheckBox from "@react-native-community/checkbox";
-import ImageView from "react-native-image-viewing";
-import {FlatList} from "react-native";
 import {EssentialComponents} from "../common";
 import {FetchFlatList, FetchFlatListProps} from "../common/FetchFlatList";
 
@@ -101,12 +96,6 @@ export class Components1 extends EssentialComponents {
   FFList = <T,>(props: Omit<FetchFlatListProps<T>, "components">) => (
     <FetchFlatList<T> components={this.comps} {...props} />
   );
-
-  FList = FlatList;
-  LinearGradient = LinearGradient;
-  Modal = Modal;
-  CheckBox = CheckBox;
-  ImageView = ImageView;
 
   Button: Class1FC<typeof Button> = (props) => <Button comp={this} {...props} />;
   TextButton: Class1FC<typeof TextButton> = (props) => <TextButton comp={this} {...props} />;

@@ -11,7 +11,11 @@ import {CenterWrapper} from "./wrappers/CenterWrapper";
 import {ScreenWrapper} from "./wrappers/ScreenWrapper";
 import BlankSpacer from "react-native-blank-spacer";
 import {FetchFlatList} from "./FetchFlatList";
-
+import LinearGradient from "react-native-linear-gradient";
+import Modal from "react-native-modal";
+import CheckBox from "@react-native-community/checkbox";
+import ImageView from "react-native-image-viewing";
+import {FlatList} from "react-native";
 export class EssentialComponents {
   icons = icons;
 
@@ -26,6 +30,12 @@ export class EssentialComponents {
   CenterWrapper = CenterWrapper;
   ScreenWrapper = ScreenWrapper;
   BS = BlankSpacer;
+
+  FList = FlatList;
+  LinearGradient = LinearGradient;
+  Modal = Modal;
+  CheckBox = CheckBox;
+  ImageView = ImageView;
 
   FetchFlatList = FetchFlatList;
 }
