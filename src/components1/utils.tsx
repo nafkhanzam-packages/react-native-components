@@ -1,7 +1,7 @@
 import {TextStyle} from "react-native";
-import {Components} from ".";
+import {Components1} from ".";
 
-export const extract = (props: {comp: Components}) => ({
+export const extract = (props: {comp: Components1}) => ({
   comp: props.comp,
   theme: props.comp.theme,
   colors: props.comp.theme.colors,

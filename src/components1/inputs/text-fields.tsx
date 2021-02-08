@@ -2,7 +2,7 @@ import {formatToString} from "@nafkhanzam/common-utils";
 import React, {ReactNode, useState} from "react";
 import {TouchableWithoutFeedback} from "react-native-gesture-handler";
 import {DefaultTheme, TextInput as RNTextInput} from "react-native-paper";
-import {CompFC, Components} from "..";
+import {Comp1FC, Components1} from "..";
 import {DatePickerType, fromDatePickerType} from "../../common/inputs/DatePicker";
 
 type Props = {
@@ -17,7 +17,7 @@ type Props = {
   rightComp?: ReactNode;
   disabled?: boolean;
   onPress?: () => void;
-  comp: Components;
+  comp: Components1;
 };
 
 type DateProps = Omit<Props, "value" | "setValue" | "disabled"> & {
@@ -86,7 +86,7 @@ const BaseTextField: React.FC<{
 
 type Type = "main" | "search" | "catering" | "alamat" | "alamatwhite";
 
-const typeMap = (type: Type, comp: Components): TypeProps => {
+const typeMap = (type: Type, comp: Components1): TypeProps => {
   const {theme} = comp;
   const fonts = {
     light: {
@@ -156,11 +156,11 @@ const typeMap = (type: Type, comp: Components): TypeProps => {
   }
 };
 
-export const TextField: CompFC<{type?: Type} & Props> = (props) => {
+export const TextField: Comp1FC<{type?: Type} & Props> = (props) => {
   return <BaseTextField props={props} typeProps={typeMap(props.type ?? "main", props.comp)} />;
 };
 
-export const DateTextField: CompFC<{type?: Type} & DateProps> = (props) => {
+export const DateTextField: Comp1FC<{type?: Type} & DateProps> = (props) => {
   const [visible, setVisible] = useState(false);
 
   if (!props.rightComp) {

@@ -1,6 +1,6 @@
 import React from "react";
 import RNSwiper from "react-native-swiper";
-import {CompFC, Theme} from ".";
+import {Comp1FC, Theme1} from ".";
 
 type Props = {
   loop?: boolean;
@@ -43,7 +43,7 @@ const BaseSwiper2: React.FC<{props: Props; typeProps: TypeProps}> = ({
 
 type Type = "main" | "no-dots";
 
-const typeMap = (type: Type, theme: Theme): TypeProps => {
+const typeMap = (type: Type, theme: Theme1): TypeProps => {
   switch (type) {
     case "main":
       return {
@@ -55,7 +55,7 @@ const typeMap = (type: Type, theme: Theme): TypeProps => {
   }
 };
 
-export const Swiper: CompFC<{type?: Type} & Props> = (props) => {
+export const Swiper: Comp1FC<{type?: Type} & Props> = (props) => {
   return (
     <BaseSwiper2 props={props} typeProps={typeMap(props.type ?? "main", props.comp.theme)}>
       {props.children}

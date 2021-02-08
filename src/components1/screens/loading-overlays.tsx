@@ -1,7 +1,7 @@
 import RNLoadingOverlay from "react-native-loading-spinner-overlay";
 import React from "react";
 import {TextStyle} from "react-native";
-import {CompFC, Theme} from "..";
+import {Comp1FC, Theme1} from "..";
 
 type Props = {
   visible?: boolean;
@@ -29,7 +29,7 @@ const BaseLoadingOverlay: React.FC<{props: Props; typeProps: TypeProps}> = ({pro
 
 type Type = "main";
 
-const typeMap = (type: Type, theme: Theme): TypeProps => {
+const typeMap = (type: Type, theme: Theme1): TypeProps => {
   switch (type) {
     case "main":
       return {
@@ -40,7 +40,7 @@ const typeMap = (type: Type, theme: Theme): TypeProps => {
   }
 };
 
-export const LoadingOverlay: CompFC<{type?: Type} & Props> = (props) => {
+export const LoadingOverlay: Comp1FC<{type?: Type} & Props> = (props) => {
   return (
     <BaseLoadingOverlay props={props} typeProps={typeMap(props.type ?? "main", props.comp.theme)} />
   );

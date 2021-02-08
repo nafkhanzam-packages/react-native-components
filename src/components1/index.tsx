@@ -18,7 +18,7 @@ import {FetchFlatList, FetchFlatListProps} from "../common/FetchFlatList";
 type Color = string;
 type Font = string;
 
-export type Theme = {
+export type Theme1 = {
   colors: {
     primary: {
       main: Color;
@@ -83,12 +83,12 @@ export type Theme = {
   };
 };
 
-export type CompFC<Props> = React.FC<{comp: Components} & Props>;
+export type Comp1FC<Props> = React.FC<{comp: Components1} & Props>;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type ClassFC<FC extends CompFC<any>> = React.FC<Omit<Parameters<FC>[0], "theme" | "comp">>;
-export class Components extends EssentialComponents {
+type Class1FC<FC extends Comp1FC<any>> = React.FC<Omit<Parameters<FC>[0], "theme" | "comp">>;
+export class Components1 extends EssentialComponents {
   constructor(
-    public theme: Theme,
+    public theme: Theme1,
     public comps: {
       error: (err: unknown) => ReactElement;
       empty: ReactElement;
@@ -108,33 +108,33 @@ export class Components extends EssentialComponents {
   CheckBox = CheckBox;
   ImageView = ImageView;
 
-  Button: ClassFC<typeof Button> = (props) => <Button comp={this} {...props} />;
-  TextButton: ClassFC<typeof TextButton> = (props) => <TextButton comp={this} {...props} />;
-  LinkButton: ClassFC<typeof LinkButton> = (props) => <LinkButton comp={this} {...props} />;
+  Button: Class1FC<typeof Button> = (props) => <Button comp={this} {...props} />;
+  TextButton: Class1FC<typeof TextButton> = (props) => <TextButton comp={this} {...props} />;
+  LinkButton: Class1FC<typeof LinkButton> = (props) => <LinkButton comp={this} {...props} />;
 
-  Card: ClassFC<typeof Card> = (props) => <Card comp={this} {...props} />;
+  Card: Class1FC<typeof Card> = (props) => <Card comp={this} {...props} />;
 
-  LoadingOverlay: ClassFC<typeof LoadingOverlay> = (props) => (
+  LoadingOverlay: Class1FC<typeof LoadingOverlay> = (props) => (
     <LoadingOverlay comp={this} {...props} />
   );
 
-  TextField: ClassFC<typeof TextField> = (props) => <TextField comp={this} {...props} />;
-  DateTextField: ClassFC<typeof DateTextField> = (props) => (
+  TextField: Class1FC<typeof TextField> = (props) => <TextField comp={this} {...props} />;
+  DateTextField: Class1FC<typeof DateTextField> = (props) => (
     <DateTextField comp={this} {...props} />
   );
-  Text: ClassFC<typeof Text> = (props) => <Text comp={this} {...props} />;
+  Text: Class1FC<typeof Text> = (props) => <Text comp={this} {...props} />;
 
-  Spinner: ClassFC<typeof Spinner> = (props) => <Spinner comp={this} {...props} />;
-  Swiper: ClassFC<typeof Swiper> = (props) => <Swiper comp={this} {...props} />;
+  Spinner: Class1FC<typeof Spinner> = (props) => <Spinner comp={this} {...props} />;
+  Swiper: Class1FC<typeof Swiper> = (props) => <Swiper comp={this} {...props} />;
 
-  ChatButton: ClassFC<typeof ChatButton> = (props) => <ChatButton comp={this} {...props} />;
-  InfoCircle: ClassFC<typeof InfoCircle> = (props) => <InfoCircle comp={this} {...props} />;
-  Rating: ClassFC<typeof Rating> = (props) => <Rating comp={this} {...props} />;
-  Distance: ClassFC<typeof Distance> = (props) => <Distance comp={this} {...props} />;
-  CrowdQuantity: ClassFC<typeof CrowdQuantity> = (props) => (
+  ChatButton: Class1FC<typeof ChatButton> = (props) => <ChatButton comp={this} {...props} />;
+  InfoCircle: Class1FC<typeof InfoCircle> = (props) => <InfoCircle comp={this} {...props} />;
+  Rating: Class1FC<typeof Rating> = (props) => <Rating comp={this} {...props} />;
+  Distance: Class1FC<typeof Distance> = (props) => <Distance comp={this} {...props} />;
+  CrowdQuantity: Class1FC<typeof CrowdQuantity> = (props) => (
     <CrowdQuantity comp={this} {...props} />
   );
-  DollarPricing: ClassFC<typeof DollarPricing> = (props) => (
+  DollarPricing: Class1FC<typeof DollarPricing> = (props) => (
     <DollarPricing comp={this} {...props} />
   );
 }

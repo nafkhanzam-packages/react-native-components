@@ -1,9 +1,9 @@
 import React from "react";
 import RNSpinner, {SpinnerType} from "react-native-spinkit";
-import {CompFC, Components, Theme} from ".";
+import {Comp1FC, Components1, Theme1} from ".";
 
 type Props = {
-  comp: Components;
+  comp: Components1;
 };
 
 type TypeProps = {size?: number; color?: string; type?: SpinnerType};
@@ -14,7 +14,7 @@ const BaseSpinner: React.FC<{props: Props; typeProps: TypeProps}> = ({typeProps}
 
 type Type = "fullscreen";
 
-const typeMap = (type: Type, theme: Theme): TypeProps => {
+const typeMap = (type: Type, theme: Theme1): TypeProps => {
   switch (type) {
     case "fullscreen":
       return {
@@ -25,7 +25,7 @@ const typeMap = (type: Type, theme: Theme): TypeProps => {
   }
 };
 
-export const Spinner: CompFC<{type?: Type} & Props> = (props) => {
+export const Spinner: Comp1FC<{type?: Type} & Props> = (props) => {
   return (
     <BaseSpinner props={props} typeProps={typeMap(props.type ?? "fullscreen", props.comp.theme)} />
   );

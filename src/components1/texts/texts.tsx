@@ -1,7 +1,7 @@
 import {fontWeights} from "../utils";
 import React from "react";
 import {Text as RNText, TextStyle} from "react-native";
-import {CompFC, Theme} from "..";
+import {Comp1FC, Theme1} from "..";
 
 type Props = {
   color?: string;
@@ -46,7 +46,7 @@ type Type =
 
 export type TextType = Type;
 
-export const Text: CompFC<{type: Type} & Props> = (props) => {
+export const Text: Comp1FC<{type: Type} & Props> = (props) => {
   return (
     <BaseText props={props} typeProps={typeMap(props.type, props.comp.theme)}>
       {props.children}
@@ -54,7 +54,7 @@ export const Text: CompFC<{type: Type} & Props> = (props) => {
   );
 };
 
-const typeMap = (type: Type, theme: Theme): TypeProps => {
+const typeMap = (type: Type, theme: Theme1): TypeProps => {
   switch (type) {
     case "heading4":
       return {

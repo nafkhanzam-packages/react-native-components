@@ -1,12 +1,12 @@
 import {extract} from "../utils";
 import React from "react";
 import {TouchableOpacity} from "react-native";
-import {CompFC, Components, Theme} from "..";
+import {Comp1FC, Components1, Theme1} from "..";
 import {TextType} from "../texts/texts";
 
 type Props = {
   onPress?: () => void;
-  comp: Components;
+  comp: Components1;
 };
 
 type TypeProps = {
@@ -52,7 +52,7 @@ const BaseButton: React.FC<{props: Props; typeProps: TypeProps}> = ({
 
 type Type = "primary" | "secondary";
 
-const typeMap = (type: Type, theme: Theme): TypeProps => {
+const typeMap = (type: Type, theme: Theme1): TypeProps => {
   switch (type) {
     case "primary":
       return {
@@ -69,7 +69,7 @@ const typeMap = (type: Type, theme: Theme): TypeProps => {
   }
 };
 
-export const Button: CompFC<{type?: Type} & Props> = (props) => {
+export const Button: Comp1FC<{type?: Type} & Props> = (props) => {
   const {comp} = extract(props);
   return (
     <BaseButton props={props} typeProps={typeMap(props.type ?? "primary", comp.theme)}>
@@ -78,7 +78,7 @@ export const Button: CompFC<{type?: Type} & Props> = (props) => {
   );
 };
 
-export const TextButton: CompFC<{type?: Type; textType?: TextType} & Props> = (props) => {
+export const TextButton: Comp1FC<{type?: Type; textType?: TextType} & Props> = (props) => {
   const {comp} = extract(props);
   const typeProps = typeMap(props.type ?? "primary", comp.theme);
 
@@ -91,7 +91,7 @@ export const TextButton: CompFC<{type?: Type; textType?: TextType} & Props> = (p
   );
 };
 
-export const LinkButton: CompFC<{textType?: TextType} & Props> = (props) => {
+export const LinkButton: Comp1FC<{textType?: TextType} & Props> = (props) => {
   const {comp, colors} = extract(props);
   return (
     <TouchableOpacity onPress={props.onPress}>

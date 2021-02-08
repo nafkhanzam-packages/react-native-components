@@ -1,6 +1,6 @@
 import React from "react";
 import {View} from "react-native";
-import {CompFC, Theme} from "..";
+import {Comp1FC, Theme1} from "..";
 
 type Props = {
   onPress?: () => void;
@@ -41,7 +41,7 @@ const BaseCard: React.FC<{props: Props; typeProps: TypeProps}> = ({props, typePr
 
 type Type = "main" | "option" | "catering" | "category";
 
-const typeMap = (type: Type, theme: Theme): TypeProps => {
+const typeMap = (type: Type, theme: Theme1): TypeProps => {
   switch (type) {
     case "main":
       return {
@@ -72,7 +72,7 @@ const typeMap = (type: Type, theme: Theme): TypeProps => {
   }
 };
 
-export const Card: CompFC<{type: Type} & Props> = (props) => {
+export const Card: Comp1FC<{type: Type} & Props> = (props) => {
   return (
     <BaseCard props={props} typeProps={typeMap(props.type ?? "main", props.comp.theme)}>
       {props.children}

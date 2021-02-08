@@ -1,9 +1,9 @@
 import {extract} from "./utils";
 import React from "react";
 import {View} from "react-native";
-import {CompFC} from ".";
+import {Comp1FC} from ".";
 
-export const ChatButton: CompFC<{}> = (props) => {
+export const ChatButton: Comp1FC<{}> = (props) => {
   const {comp, colors} = extract(props);
 
   return (
@@ -27,7 +27,7 @@ export const ChatButton: CompFC<{}> = (props) => {
   );
 };
 
-export const InfoCircle: CompFC<{}> = (props) => {
+export const InfoCircle: Comp1FC<{}> = (props) => {
   const {comp, colors} = extract(props);
 
   return (
@@ -55,7 +55,7 @@ export const InfoCircle: CompFC<{}> = (props) => {
   );
 };
 
-export const Rating: CompFC<{rating: number}> = (props) => {
+export const Rating: Comp1FC<{rating: number}> = (props) => {
   const {comp, colors} = extract(props);
 
   return (
@@ -66,7 +66,7 @@ export const Rating: CompFC<{rating: number}> = (props) => {
   );
 };
 
-export const Distance: CompFC<{distance: number; unit: string}> = (props) => {
+export const Distance: Comp1FC<{distance: number; unit: string}> = (props) => {
   const {comp, colors} = extract(props);
 
   return (
@@ -79,7 +79,7 @@ export const Distance: CompFC<{distance: number; unit: string}> = (props) => {
   );
 };
 
-export const CrowdQuantity: CompFC<{quantity: number}> = (props) => {
+export const CrowdQuantity: Comp1FC<{quantity: number}> = (props) => {
   const {comp, colors} = extract(props);
 
   return (
@@ -91,7 +91,7 @@ export const CrowdQuantity: CompFC<{quantity: number}> = (props) => {
   );
 };
 
-export const DollarPricing: CompFC<{count: number}> = (props) => {
+export const DollarPricing: Comp1FC<{count: number}> = (props) => {
   const {comp, colors} = extract(props);
 
   return (
