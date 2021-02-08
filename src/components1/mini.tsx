@@ -1,10 +1,10 @@
-import {extract} from "./utils";
+import {extract1} from "./utils";
 import React from "react";
 import {View} from "react-native";
 import {Comp1FC} from ".";
 
 export const ChatButton: Comp1FC<{}> = (props) => {
-  const {comp, colors} = extract(props);
+  const {comp, colors} = extract1(props);
 
   return (
     <View
@@ -28,7 +28,7 @@ export const ChatButton: Comp1FC<{}> = (props) => {
 };
 
 export const InfoCircle: Comp1FC<{}> = (props) => {
-  const {comp, colors} = extract(props);
+  const {comp, colors} = extract1(props);
 
   return (
     <View
@@ -56,7 +56,7 @@ export const InfoCircle: Comp1FC<{}> = (props) => {
 };
 
 export const Rating: Comp1FC<{rating: number}> = (props) => {
-  const {comp, colors} = extract(props);
+  const {comp, colors} = extract1(props);
 
   return (
     <View style={{flexDirection: "row", alignItems: "center"}}>
@@ -67,7 +67,7 @@ export const Rating: Comp1FC<{rating: number}> = (props) => {
 };
 
 export const Distance: Comp1FC<{distance: number; unit: string}> = (props) => {
-  const {comp, colors} = extract(props);
+  const {comp, colors} = extract1(props);
 
   return (
     <View style={{flexDirection: "row", alignItems: "center"}}>
@@ -80,7 +80,7 @@ export const Distance: Comp1FC<{distance: number; unit: string}> = (props) => {
 };
 
 export const CrowdQuantity: Comp1FC<{quantity: number}> = (props) => {
-  const {comp, colors} = extract(props);
+  const {comp, colors} = extract1(props);
 
   return (
     <View style={{flexDirection: "row", alignItems: "center"}}>
@@ -92,7 +92,7 @@ export const CrowdQuantity: Comp1FC<{quantity: number}> = (props) => {
 };
 
 export const DollarPricing: Comp1FC<{count: number}> = (props) => {
-  const {comp, colors} = extract(props);
+  const {comp, colors} = extract1(props);
 
   return (
     <comp.Text type="caption" color={colors.dollarGreen}>

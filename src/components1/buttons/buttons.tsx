@@ -1,4 +1,4 @@
-import {extract} from "../utils";
+import {extract1} from "../utils";
 import React from "react";
 import {TouchableOpacity} from "react-native";
 import {Comp1FC, Components1, Theme1} from "..";
@@ -25,7 +25,7 @@ const BaseButton: React.FC<{props: Props; typeProps: TypeProps}> = ({
   typeProps,
   children,
 }) => {
-  const {comp} = extract(props);
+  const {comp} = extract1(props);
   return (
     <TouchableOpacity
       onPress={props.onPress}
@@ -70,7 +70,7 @@ const typeMap = (type: Type, theme: Theme1): TypeProps => {
 };
 
 export const Button: Comp1FC<{type?: Type} & Props> = (props) => {
-  const {comp} = extract(props);
+  const {comp} = extract1(props);
   return (
     <BaseButton props={props} typeProps={typeMap(props.type ?? "primary", comp.theme)}>
       {props.children}
@@ -79,7 +79,7 @@ export const Button: Comp1FC<{type?: Type} & Props> = (props) => {
 };
 
 export const TextButton: Comp1FC<{type?: Type; textType?: TextType} & Props> = (props) => {
-  const {comp} = extract(props);
+  const {comp} = extract1(props);
   const typeProps = typeMap(props.type ?? "primary", comp.theme);
 
   return (
@@ -92,7 +92,7 @@ export const TextButton: Comp1FC<{type?: Type; textType?: TextType} & Props> = (
 };
 
 export const LinkButton: Comp1FC<{textType?: TextType} & Props> = (props) => {
-  const {comp, colors} = extract(props);
+  const {comp, colors} = extract1(props);
   return (
     <TouchableOpacity onPress={props.onPress}>
       <comp.Text type={props.textType ?? "n20"} color={colors.text.link}>
