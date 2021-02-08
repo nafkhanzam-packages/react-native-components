@@ -50,9 +50,12 @@ const BaseButton: React.FC<{props: Props; typeProps: TypeProps}> = ({
   );
 };
 
-type Type = "primary" | "secondary";
+type Type = "primary" | "secondary" | TypeProps;
 
 const typeMap = (type: Type, theme: Theme1): TypeProps => {
+  if (typeof type !== "string") {
+    return type;
+  }
   switch (type) {
     case "primary":
       return {

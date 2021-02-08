@@ -84,9 +84,12 @@ const BaseTextField: React.FC<{
   );
 };
 
-type Type = "main" | "search" | "catering" | "alamat" | "alamatwhite";
+type Type = "main" | "search" | "catering" | "alamat" | "alamatwhite" | TypeProps;
 
 const typeMap = (type: Type, comp: Components1): TypeProps => {
+  if (typeof type !== "string") {
+    return type;
+  }
   const {theme} = comp;
   const fonts = {
     light: {

@@ -42,7 +42,8 @@ type Type =
   | "n20"
   | "n18"
   | "n14"
-  | "b14";
+  | "b14"
+  | TypeProps;
 
 export type TextType = Type;
 
@@ -55,6 +56,9 @@ export const Text: Comp1FC<{type: Type} & Props> = (props) => {
 };
 
 const typeMap = (type: Type, theme: Theme1): TypeProps => {
+  if (typeof type !== "string") {
+    return type;
+  }
   switch (type) {
     case "heading4":
       return {

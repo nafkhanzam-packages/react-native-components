@@ -12,9 +12,12 @@ const BaseSpinner: React.FC<{props: Props; typeProps: TypeProps}> = ({typeProps}
   return <RNSpinner type={typeProps.type} size={typeProps.size} color={typeProps.color} />;
 };
 
-type Type = "fullscreen";
+type Type = "fullscreen" | TypeProps;
 
 const typeMap = (type: Type, theme: Theme1): TypeProps => {
+  if (typeof type !== "string") {
+    return type;
+  }
   switch (type) {
     case "fullscreen":
       return {

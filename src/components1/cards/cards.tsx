@@ -39,9 +39,12 @@ const BaseCard: React.FC<{props: Props; typeProps: TypeProps}> = ({props, typePr
   );
 };
 
-type Type = "main" | "option" | "catering" | "category";
+type Type = "main" | "option" | "catering" | "category" | TypeProps;
 
 const typeMap = (type: Type, theme: Theme1): TypeProps => {
+  if (typeof type !== "string") {
+    return type;
+  }
   switch (type) {
     case "main":
       return {

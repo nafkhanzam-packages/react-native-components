@@ -41,9 +41,12 @@ const BaseSwiper2: React.FC<{props: Props; typeProps: TypeProps}> = ({
   );
 };
 
-type Type = "main" | "no-dots";
+type Type = "main" | "no-dots" | TypeProps;
 
 const typeMap = (type: Type, theme: Theme1): TypeProps => {
+  if (typeof type !== "string") {
+    return type;
+  }
   switch (type) {
     case "main":
       return {
