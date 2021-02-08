@@ -1,5 +1,17 @@
-import {Alert, PermissionsAndroid} from "react-native";
+import {Alert, PermissionsAndroid, TextStyle} from "react-native";
 import {formatToGql} from "@nafkhanzam/common-utils";
+
+export const fontWeights = {
+  thin: "100" as TextStyle["fontWeight"],
+  ultraLight: "200" as TextStyle["fontWeight"],
+  light: "300" as TextStyle["fontWeight"],
+  regular: "400" as TextStyle["fontWeight"],
+  medium: "500" as TextStyle["fontWeight"],
+  semibold: "600" as TextStyle["fontWeight"],
+  bold: "700" as TextStyle["fontWeight"],
+  heavy: "800" as TextStyle["fontWeight"],
+  black: "900" as TextStyle["fontWeight"],
+};
 
 const formatError = (err: unknown) => {
   const {status: title = "Error!", message: msg} = formatToGql.toError(err);
