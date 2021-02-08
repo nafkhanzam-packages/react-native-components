@@ -1,7 +1,7 @@
-import {extract1} from "./utils";
+import {extract1} from "../utils";
 import React from "react";
 import {View} from "react-native";
-import {Comp1FC} from ".";
+import {Comp1FC} from "..";
 
 export const ChatButton: Comp1FC<{}> = (props) => {
   const {comp, colors} = extract1(props);

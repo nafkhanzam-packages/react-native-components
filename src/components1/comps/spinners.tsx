@@ -1,6 +1,6 @@
 import React from "react";
 import RNSpinner, {SpinnerType} from "react-native-spinkit";
-import {Comp1FC, Components1, Theme1} from ".";
+import {Comp1FC, Components1, Theme1} from "..";
 
 type Props = {
   comp: Components1;

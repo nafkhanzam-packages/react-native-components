@@ -2,7 +2,7 @@ import {extract1} from "../utils";
 import React from "react";
 import {TouchableOpacity} from "react-native";
 import {Comp1FC, Components1, Theme1} from "..";
-import {TextType} from "../texts/texts";
+import {TextType} from "./texts";
 
 type Props = {
   onPress?: () => void;

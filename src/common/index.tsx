@@ -30,12 +30,11 @@ export class EssentialComponents {
   CenterWrapper = CenterWrapper;
   ScreenWrapper = ScreenWrapper;
   BS = BlankSpacer;
-
   FList = FlatList;
+  FetchFlatList = FetchFlatList;
+
   LinearGradient = LinearGradient;
   Modal = Modal;
   CheckBox = CheckBox;
   ImageView = ImageView;
-
-  FetchFlatList = FetchFlatList;
 }

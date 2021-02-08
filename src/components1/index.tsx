@@ -1,12 +1,12 @@
 import React, {ReactElement} from "react";
-import {Button, LinkButton, TextButton} from "./buttons/buttons";
-import {Card} from "./cards/cards";
-import {DateTextField, TextField} from "./inputs/text-fields";
-import {LoadingOverlay} from "./screens/loading-overlays";
-import {Spinner} from "./spinners";
-import {Swiper} from "./swipers";
-import {Text} from "./texts/texts";
-import {ChatButton, CrowdQuantity, Distance, DollarPricing, InfoCircle, Rating} from "./mini";
+import {Button, LinkButton, TextButton} from "./comps/buttons";
+import {Card} from "./comps/cards";
+import {DateTextField, TextField} from "./comps/text-fields";
+import {LoadingOverlay} from "./comps/loading-overlays";
+import {Spinner} from "./comps/spinners";
+import {Swiper} from "./comps/swipers";
+import {Text} from "./comps/texts";
+import {ChatButton, CrowdQuantity, Distance, DollarPricing, InfoCircle, Rating} from "./comps/mini";
 import {EssentialComponents} from "../common";
 import {FetchFlatList, FetchFlatListProps} from "../common/FetchFlatList";
 
@@ -80,7 +80,7 @@ export type Theme1 = {
 
 export type Comp1FC<Props> = React.FC<{comp: Components1} & Props>;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type Class1FC<FC extends Comp1FC<any>> = React.FC<Omit<Parameters<FC>[0], "theme" | "comp">>;
+export type Class1FC<FC extends Comp1FC<any>> = React.FC<Omit<Parameters<FC>[0], "theme" | "comp">>;
 export class Components1 extends EssentialComponents {
   constructor(
     public theme: Theme1,
