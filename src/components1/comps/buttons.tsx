@@ -50,7 +50,7 @@ const BaseButton: React.FC<{props: Props; typeProps: TypeProps}> = ({
   );
 };
 
-type Type = "primary" | "secondary" | TypeProps;
+type Type = "primary" | "secondary" | "disabled" | TypeProps;
 
 const typeMap = (type: Type, theme: Theme1): TypeProps => {
   if (typeof type !== "string") {
@@ -59,11 +59,17 @@ const typeMap = (type: Type, theme: Theme1): TypeProps => {
   switch (type) {
     case "primary":
       return {
-        color: theme.colors.secondary[2],
+        color: theme.colors.primary[2],
         textColor: theme.colors.text.light,
         shadowColor: theme.colors.shadow,
       };
     case "secondary":
+      return {
+        color: theme.colors.secondary[2],
+        textColor: theme.colors.text.light,
+        shadowColor: theme.colors.shadow,
+      };
+    case "disabled":
       return {
         color: theme.colors.grays[5],
         textColor: theme.colors.text.light,
