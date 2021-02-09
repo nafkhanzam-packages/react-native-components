@@ -91,7 +91,7 @@ const typeMap = (type: Type, comp: Components1): TypeProps => {
     return type;
   }
   const {theme} = comp;
-  const fonts = {
+  const fonts: typeof DefaultTheme["fonts"] = {
     light: {
       fontFamily: theme.fonts.light,
     },

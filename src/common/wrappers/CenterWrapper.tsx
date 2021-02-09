@@ -7,7 +7,7 @@ export const CenterWrapper: React.FC<{type?: "horizontal-only" | "vertical-only"
   return (
     <View
       style={{
-        // flex: 1,
+        flex: 1,
         // width: props.type === "vertical-only" ? undefined : "100%",
         alignItems: props.type === "vertical-only" ? undefined : "center",
         // height: props.type === "horizontal-only" ? undefined : "100%",

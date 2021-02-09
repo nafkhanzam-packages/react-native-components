@@ -7,6 +7,7 @@ type Props = {
   color?: string;
   center?: boolean;
   bold?: boolean;
+  underlined?: boolean;
 };
 
 type TypeProps = TextStyle;
@@ -20,6 +21,7 @@ const BaseText: React.FC<{props: Props; typeProps: TypeProps}> = ({props, typePr
           color: props.color,
           textAlign: props.center ? "center" : undefined,
           fontWeight: props.bold ? "bold" : undefined,
+          textDecorationLine: props.underlined ? "underline" : undefined,
         },
       ]}
     >

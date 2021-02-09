@@ -41,14 +41,6 @@ export type Theme1 = {
       border1: Color;
       background: Color;
     };
-    catering: {
-      label: Color;
-      gradient: [Color, Color];
-    };
-    venue: {
-      label: Color;
-      gradient: [Color, Color];
-    };
     grays: {
       1: Color;
       2: Color;

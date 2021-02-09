@@ -6,6 +6,7 @@ type Props = {
   onPress?: () => void;
   color?: string;
   noShadow?: boolean;
+  paddingHorizontal?: number;
 };
 
 type TypeProps = {
@@ -23,6 +24,7 @@ const BaseCard: React.FC<{props: Props; typeProps: TypeProps}> = ({props, typePr
     <View
       style={{
         backgroundColor: props.color ?? typeProps.color,
+        paddingHorizontal: props.paddingHorizontal ?? typeProps.padding,
         borderRadius: typeProps.borderRadius ?? 10,
         padding: typeProps.padding ?? 12,
         shadowColor: !props.noShadow ? typeProps.shadowColor : undefined,

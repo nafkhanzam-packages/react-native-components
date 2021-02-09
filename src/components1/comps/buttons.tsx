@@ -98,7 +98,7 @@ export const LinkButton: Comp1FC<{textType?: TextType} & Props> = (props) => {
   const {comp, colors} = extract1(props);
   return (
     <TouchableOpacity onPress={props.onPress}>
-      <comp.Text type={props.textType ?? "n20"} color={colors.text.link}>
+      <comp.Text type={props.textType ?? "n20"} color={colors.text.link} underlined>
         {props.children}
       </comp.Text>
     </TouchableOpacity>
