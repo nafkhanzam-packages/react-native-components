@@ -65,14 +65,7 @@ export const alerts = {
   error: (err: unknown) => {
     console.error(err);
     const {title, msg} = formatError(err);
-    if (msg === "Network request failed") {
-      Alert.alert(
-        title,
-        "Anda sepertinya tidak terhubung dengan internet / sinyal anda lemah, Mohon coba kembali dengan jaringan yang lebih stabil",
-      );
-    } else {
-      Alert.alert(title, msg);
-    }
+    Alert.alert(title, msg);
   },
   info: (title: string, message: string) => {
     Alert.alert(title, message);
