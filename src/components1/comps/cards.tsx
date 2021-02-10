@@ -7,6 +7,7 @@ type Props = {
   color?: string;
   noShadow?: boolean;
   paddingHorizontal?: number;
+  overflowHidden?: boolean;
 };
 
 type TypeProps = {
@@ -15,7 +16,6 @@ type TypeProps = {
   borderRadius?: number;
   borderWidth?: number;
   borderColor?: string;
-  padding?: number;
   elevation?: number;
 };
 
@@ -24,9 +24,8 @@ const BaseCard: React.FC<{props: Props; typeProps: TypeProps}> = ({props, typePr
     <View
       style={{
         backgroundColor: props.color ?? typeProps.color,
-        paddingHorizontal: props.paddingHorizontal ?? typeProps.padding,
+        paddingHorizontal: props.paddingHorizontal,
         borderRadius: typeProps.borderRadius ?? 10,
-        padding: typeProps.padding ?? 12,
         shadowColor: !props.noShadow ? typeProps.shadowColor : undefined,
         shadowOffset: typeProps.shadowColor && !props.noShadow ? {height: 6, width: 3} : undefined,
         shadowOpacity: typeProps.shadowColor && !props.noShadow ? 0.16 : undefined,
@@ -34,6 +33,7 @@ const BaseCard: React.FC<{props: Props; typeProps: TypeProps}> = ({props, typePr
         borderWidth: typeProps.borderWidth,
         borderColor: typeProps.borderColor,
         elevation: !props.noShadow ? typeProps.elevation : undefined,
+        overflow: props.overflowHidden ? "hidden" : undefined,
       }}
     >
       {children}
@@ -41,7 +41,7 @@ const BaseCard: React.FC<{props: Props; typeProps: TypeProps}> = ({props, typePr
   );
 };
 
-type Type = "main" | TypeProps;
+type Type = "main" | "rounder" | TypeProps;
 
 const typeMap = (type: Type, theme: Theme1): TypeProps => {
   if (typeof type !== "string") {
@@ -49,6 +49,13 @@ const typeMap = (type: Type, theme: Theme1): TypeProps => {
   }
   switch (type) {
     case "main":
+      return {
+        color: theme.colors.white,
+        shadowColor: theme.colors.shadow,
+        elevation: 2,
+        borderRadius: 10,
+      };
+    case "rounder":
       return {
         color: theme.colors.white,
         shadowColor: theme.colors.shadow,

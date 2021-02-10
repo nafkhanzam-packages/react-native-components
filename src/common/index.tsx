@@ -1,5 +1,5 @@
 import * as icons from "./icons";
-import {Carousel} from "./Carousel";
+import {ImageCarousel} from "./ImageCarousel";
 import {CoverBackground} from "./images/CoverBackground";
 import {CoverImage} from "./images/CoverImage";
 import {FitImage} from "./images/FitImage";
@@ -16,10 +16,12 @@ import Modal from "react-native-modal";
 import CheckBox from "@react-native-community/checkbox";
 import ImageView from "react-native-image-viewing";
 import {FlatList} from "react-native";
+import Carousel from "react-native-snap-carousel";
 export class EssentialComponents {
   icons = icons;
 
   Carousel = Carousel;
+  ImageCarousel = ImageCarousel;
   CoverBackground = CoverBackground;
   CoverImage = CoverImage;
   FitImage = FitImage;

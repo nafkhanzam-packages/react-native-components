@@ -12,7 +12,7 @@ type Data = {
   image: ImageSourcePropType;
 };
 
-export const Carousel = <T extends Data>(props: {
+export const ImageCarousel = <T extends Data>(props: {
   datas: T[];
   onPress?: (index: number) => void;
   onSnapToItem?: (index: number) => void;
