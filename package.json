@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/nafkhanzam/react-native-components#readme",
   "scripts": {
+    "android": "react-native run-android",
+    "start": "react-native start",
     "prepublishOnly": "yarn generate && yarn build",
     "build": "tsc",
     "generate": "ts-node generateExports",
@@ -31,6 +33,12 @@
     "react": "^16"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.1.17",
+    "@storybook/addon-knobs": "^6.1.17",
+    "@storybook/addon-links": "^6.1.17",
+    "@storybook/addon-ondevice-actions": "^5.3.23",
+    "@storybook/addon-ondevice-knobs": "^5.3.23",
+    "@storybook/react-native": "^5.3.23",
     "@types/react": "^17.0.0",
     "@types/react-native": "^0.63.45",
     "@types/react-native-loading-spinner-overlay": "^0.5.2",

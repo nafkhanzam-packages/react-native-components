@@ -1,5 +1,5 @@
 import React from "react";
-import {Text as RNText, TextStyle} from "react-native";
+import {Text as RNText, TextStyle, View} from "react-native";
 import {Comp1FC, Theme1} from "..";
 import {fontWeights} from "../../utils";
 
@@ -14,19 +14,21 @@ type TypeProps = TextStyle;
 
 const BaseText: React.FC<{props: Props; typeProps: TypeProps}> = ({props, typeProps, children}) => {
   return (
-    <RNText
-      style={[
-        typeProps,
-        {
-          color: props.color,
-          textAlign: props.center ? "center" : undefined,
-          fontWeight: props.bold ? "bold" : undefined,
-          textDecorationLine: props.underlined ? "underline" : undefined,
-        },
-      ]}
-    >
-      {children}
-    </RNText>
+    <View style={{flexShrink: 1}}>
+      <RNText
+        style={[
+          typeProps,
+          {
+            color: props.color,
+            textAlign: props.center ? "center" : undefined,
+            fontWeight: props.bold ? "bold" : undefined,
+            textDecorationLine: props.underlined ? "underline" : undefined,
+          },
+        ]}
+      >
+        {children}
+      </RNText>
+    </View>
   );
 };
 

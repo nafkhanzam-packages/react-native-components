@@ -1,7 +1,7 @@
 import React from "react";
 import {View} from "react-native";
 
-export const CenterWrapper: React.FC<{type?: "horizontal-only" | "vertical-only" | "all"}> = (
+export const CenterWrapper: React.FC<{type: "horizontal-only" | "vertical-only" | "all"}> = (
   props,
 ) => {
   return (

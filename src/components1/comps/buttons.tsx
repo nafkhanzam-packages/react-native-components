@@ -45,7 +45,7 @@ const BaseButton: React.FC<{props: Props; typeProps: TypeProps}> = ({
         shadowRadius: typeProps.shadowColor ? 10 : undefined,
       }}
     >
-      <comp.CenterWrapper>{children}</comp.CenterWrapper>
+      <comp.CenterWrapper type="all">{children}</comp.CenterWrapper>
     </TouchableOpacity>
   );
 };

@@ -80,6 +80,11 @@ export class Components1 extends EssentialComponents {
       error: (err: unknown) => ReactElement;
       empty: ReactElement;
       loading: ReactElement;
+    } = {
+      empty: <></>,
+      // eslint-disable-next-line react/display-name
+      error: () => <></>,
+      loading: <></>,
     },
   ) {
     super();
