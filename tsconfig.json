@@ -20,5 +20,13 @@
     "target": "ES2015",
     "outDir": "lib"
   },
-  "exclude": ["generateExports.ts", "node_modules", "lib"]
+  "exclude": [
+    "generateExports.ts",
+    "node_modules",
+    "lib",
+    "index.ts",
+    "babel.config.js",
+    "metro.config.js",
+    "storybook"
+  ]
 }

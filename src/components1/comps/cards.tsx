@@ -7,6 +7,8 @@ type Props = {
   color?: string;
   noShadow?: boolean;
   paddingHorizontal?: number;
+  paddingVertical?: number;
+  padding?: number;
   overflowHidden?: boolean;
 };
 
@@ -25,6 +27,8 @@ const BaseCard: React.FC<{props: Props; typeProps: TypeProps}> = ({props, typePr
       style={{
         backgroundColor: props.color ?? typeProps.color,
         paddingHorizontal: props.paddingHorizontal,
+        paddingVertical: props.paddingVertical,
+        padding: props.padding,
         borderRadius: typeProps.borderRadius ?? 10,
         shadowColor: !props.noShadow ? typeProps.shadowColor : undefined,
         shadowOffset: typeProps.shadowColor && !props.noShadow ? {height: 6, width: 3} : undefined,

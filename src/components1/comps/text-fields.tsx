@@ -1,6 +1,6 @@
 import {formatToString} from "@nafkhanzam/common-utils";
 import React, {ReactNode, useState} from "react";
-import {TouchableWithoutFeedback} from "react-native-gesture-handler";
+import {TouchableNativeFeedback, View} from "react-native";
 import {DefaultTheme, TextInput as RNTextInput} from "react-native-paper";
 import {Comp1FC, Components1} from "..";
 import {DatePickerType, fromDatePickerType} from "../../common/inputs/DatePicker";
@@ -68,7 +68,10 @@ const BaseTextField: React.FC<{
       dense={props.dense ?? typeProps.dense}
       left={left && <RNTextInput.Icon {...supress} name={() => left} />}
       right={right && <RNTextInput.Icon {...supress} name={() => right} />}
-      style={{fontSize: typeProps.fontSize, marginTop: typeProps.fixMarginTop ? -7 : undefined}}
+      style={{
+        fontSize: typeProps.fontSize,
+        marginTop: typeProps.fixMarginTop ? -7 : undefined,
+      }}
       theme={{
         fonts: typeProps.fonts,
         colors: {
@@ -135,12 +138,16 @@ export const TextField: Comp1FC<{type?: Type} & Props> = (props) => {
   return <BaseTextField props={props} typeProps={typeMap(props.type ?? "main", props.comp)} />;
 };
 
-export const DateTextField: Comp1FC<{type?: Type} & DateProps> = (props) => {
+export const DateTextField: Comp1FC<{type?: Type} & DateProps> = (baseProps) => {
   const [visible, setVisible] = useState(false);
-
-  if (!props.rightComp) {
-    props.rightComp = <props.comp.icons.MaterialIcons name="calendar" />;
-  }
+  const props = {...baseProps};
+  props.rightComp = (
+    <props.comp.icons.MaterialIcons
+      name="calendar-today"
+      size={24}
+      onPress={() => setVisible(true)}
+    />
+  );
 
   return (
     <>
@@ -153,17 +160,15 @@ export const DateTextField: Comp1FC<{type?: Type} & DateProps> = (props) => {
           }}
         />
       )}
-      <TouchableWithoutFeedback onPress={() => setVisible(true)}>
-        <BaseTextField
-          props={{
-            ...props,
-            disabled: true,
-            value: formatToString.toDate(fromDatePickerType(props.date)),
-            setValue: () => {},
-          }}
-          typeProps={typeMap(props.type ?? "main", props.comp)}
-        />
-      </TouchableWithoutFeedback>
+      <BaseTextField
+        props={{
+          ...props,
+          disabled: true,
+          value: formatToString.toDate(fromDatePickerType(props.date)),
+          setValue: () => {},
+        }}
+        typeProps={typeMap(props.type ?? "main", props.comp)}
+      />
     </>
   );
 };
