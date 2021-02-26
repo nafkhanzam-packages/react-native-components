@@ -14,7 +14,20 @@ export const fontWeights = {
 };
 
 const formatError = (err: unknown) => {
-  const {status: title = "Error!", message: msg} = formatToGql.toError(err);
+  let title = "Error!";
+  let msg = "Unknown error.";
+  if (err instanceof Error) {
+    title = err.name;
+    msg = err.message;
+  } else {
+    const {status, message} = formatToGql.toError(err);
+    if (status) {
+      title = status;
+    }
+    if (message) {
+      msg = message;
+    }
+  }
   return {title, msg};
 };
 

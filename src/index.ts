@@ -21,4 +21,5 @@ export * from "./components1/comps/text-fields";
 export * from "./components1/comps/texts";
 export * from "./components1/index";
 export * from "./components1/utils";
+export * from "./storage";
 export * from "./utils";
